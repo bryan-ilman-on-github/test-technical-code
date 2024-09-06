@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Technical Code</title>
+</head>
+<body>
+    <form action="{% url 'backend' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="generate-segitiga" value="Generate Segitiga">
+        <input type="submit" name="generate-bilangan-ganjil" value="Generate Bilangan Ganjil">
+        <input type="submit" name="generate-bilangan-prima" value="Generate Bilangan Prima">
+    </form>
+    <h2>Result:</h2>
+    {{ output|linebreaks }}
+</body>
+</html>
